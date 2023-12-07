@@ -1,10 +1,13 @@
 const express = require('express');
 const app = express();
-// Hardcoded in-memory products array (in a real app, data would typically come from a database)
-const products = [
-  { id: 1, name: 'Product 1', brand: 'Brand A' },
-  { id: 2, name: 'Product 2', brand: 'Brand B' },
-  { id: 3, name: 'Product 3', brand: 'Brand A' }
+// Hardcoded in-memory songs array (in a real app, data would typically come from a database)
+const songs = [
+  { id: 1, name: 'Get out, Babylon.', band: 'Aquarium' },
+  { id: 2, name: 'Hero', band: 'Picnic' },
+  { id: 3, name: 'Voulez-Vous Coucher Avec Moi', band: 'Aquarium' },
+  { id: 4, name: 'Secret Uzbek', band: 'Aquarium' },
+  { id: 5, name: 'Morse code', band: 'Picnic' },
+  { id: 2, name: 'Summer', band: 'Kino' }
 ];
 // handle get request
 app.get('/', (request, response) => {
@@ -12,14 +15,14 @@ app.get('/', (request, response) => {
   response.send('response for GET request');
 });
 
-// Route with a route parameter to get products by brand
-app.get('/products/:brand', (req, res) => {
-  const { brand } = req.params; // Access the brand parameter from the URL
+// Route with a route parameter to get songs by band
+app.get('/songs/:band', (req, res) => {
+  const { band } = req.params; // Access the band parameter from the URL
 
-  // Filter products based on the brand parameter
-  const filteredProducts = products.filter(product => product.brand === brand);
+  // Filter songs based on the band parameter
+  const filteredsongs = songs.filter(song => song.band === band);
 
-  res.json(filteredProducts); // Send the filtered products as a JSON response
+  res.json(filteredsongs); // Send the filtered songs as a JSON response
 });
 
 // start the server

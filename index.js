@@ -7,7 +7,7 @@ const songs = [
   { id: 3, name: 'Voulez-Vous Coucher Avec Moi', band: 'Aquarium' },
   { id: 4, name: 'Secret Uzbek', band: 'Aquarium' },
   { id: 5, name: 'Morse code', band: 'Picnic' },
-  { id: 2, name: 'Summer', band: 'Kino' }
+  { id: 6, name: 'Summer', band: 'Kino' }
 ];
 // handle get request
 app.get('/', (request, response) => {

@@ -1,2 +1,4 @@
 www/data/Commit.json
 www/save/*
+.env
+node_modules
